@@ -9,7 +9,7 @@ ATLASLOOT_OLD_ATLAS_TEXT_PT2 = ").  Depending on changes, there may be the occas
 ATLASLOOT_OLD_ATLAS_BUTTON = "OK";
 
 ATLASLOOT_DROP_RATE = "Drop Rate: ";
-ATLASLOOT_DKP = "GP";
+ATLASLOOT_DKP = "DKP";
 ATLASLOOT_PRIORITY = "Fixed Price:";
 
 ATLASLOOT_BANNER_TEXT = "Click onto the bossname to toggle the loot view."
