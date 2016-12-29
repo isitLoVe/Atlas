@@ -16,6 +16,10 @@ Edit the file: AtlasLoot\Addons\dkp.lua and AtlasLoot\Addons\lasspriority.lua
 Use the DKP branch on github
 
 ###3. I want the tooltip in another color that fits my UI
+Edit line 3 in the file AtlasLoot/Core/LootButtons.lua
+local ABRAXA_COL = "|cffff0000";
+Lime Green would be: local ABRAXA_COL = "|cff00ff00";
+
 
 
 
