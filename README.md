@@ -10,7 +10,7 @@ Atlas + AtlasLoot Enchanted + AtlasQuest with GP price and fixed price display:
 
 #FAQ:
 ###1. How to import my own guild prices?
-Edit the file: AtlasLoot\Addons\dkp.lua and AtlasLoot\Addons\lasspriority.lua
+Edit the file: AtlasLoot\Addons\dkp.lua and AtlasLoot\Addons\classpriority.lua
 
 ###2. I am using DKP and want to have the addon display DKP: instead of GP:
 Use the DKP branch on github
