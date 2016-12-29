@@ -8,8 +8,7 @@ Then i have the perfect solution for you!
 Atlas + AtlasLoot Enchanted + AtlasQuest with GP price and fixed price display:
 
 
-FAQ:
-
+#FAQ:
 ###1. How to import my own guild prices?
 Edit the file: AtlasLoot\Addons\dkp.lua and AtlasLoot\Addons\lasspriority.lua
 
@@ -18,9 +17,6 @@ Edit the file: AtlasLoot\Addons\dkp.lua and AtlasLoot\Addons\lasspriority.lua
 
 ###3. I want the tooltip in another color that fits my UI
 
-
-###How to import your own prices?
-Edit the file: AtlasLoot\Addons\dkp.lua and AtlasLoot\Addons\lasspriority.lua
 
 
 ##GP:
