@@ -13,7 +13,7 @@ Atlas + AtlasLoot Enchanted + AtlasQuest with GP price and fixed price display:
 Edit the file: AtlasLoot\Addons\dkp.lua and AtlasLoot\Addons\lasspriority.lua
 
 ###2. I am using DKP and want to have the addon display DKP: instead of GP:
-
+Use the DKP branch on github
 
 ###3. I want the tooltip in another color that fits my UI
 
