@@ -1,5 +1,6 @@
 local GREY = "|cff999999";
 local RED = "|cffff0000";
+local ABRAXA_COL = "|cffff0000";
 local WHITE = "|cffFFFFFF";
 local GREEN = "|cff1eff00";
 local PURPLE = "|cff9F3FFF";
@@ -44,7 +45,7 @@ function AtlasLootItem_OnEnter()
                     AtlasLootTooltip:AddLine(ATLASLOOT_DROP_RATE..this.droprate, 1, 1, 0);
                 end
                 if( DKP ~= nil and DKP ~= "" ) then
-                    AtlasLootTooltip:AddLine(RED..DKP.." "..ATLASLOOT_DKP, 1, 1, 0, 1);
+                    AtlasLootTooltip:AddLine(ABRAXA_COL..DKP.." "..ATLASLOOT_DKP, 1, 1, 0, 1);
                 end
                 if( priority ~= nil and priority ~= "" ) then
                     AtlasLootTooltip:AddLine(GREEN..ATLASLOOT_PRIORITY.." "..priority, 1, 1, 0, 1);
@@ -63,7 +64,7 @@ function AtlasLootItem_OnEnter()
                     AtlasLootTooltip:AddLine(ATLASLOOT_DROP_RATE..this.droprate, 1, 1, 0, 1);
                 end
                 if( DKP ~= nil and DKP ~= "" ) then
-                    AtlasLootTooltip:AddLine(RED..DKP.." "..ATLASLOOT_DKP, 1, 1, 0);
+                    AtlasLootTooltip:AddLine(ABRAXA_COL..DKP.." "..ATLASLOOT_DKP, 1, 1, 0);
                 end
                 if( priority ~= nil and priority ~= "" ) then
                     AtlasLootTooltip:AddLine(GREEN..ATLASLOOT_PRIORITY.." "..priority, 1, 1, 0);
@@ -86,7 +87,7 @@ function AtlasLootItem_OnEnter()
                 GameTooltip:AddLine(ATLASLOOT_DROP_RATE..this.droprate, 1, 1, 0);
             end
             if( DKP ~= nil and DKP ~= "" ) then
-                GameTooltip:AddLine(RED..DKP.." "..ATLASLOOT_DKP, 1, 1, 0);
+                GameTooltip:AddLine(ABRAXA_COL..DKP.." "..ATLASLOOT_DKP, 1, 1, 0);
             end 
             if( priority ~= nil and priority ~= "" ) then
                 GameTooltip:AddLine(GREEN..ATLASLOOT_PRIORITY.." "..priority, 1, 1, 0);
@@ -109,7 +110,7 @@ function AtlasLootItem_OnEnter()
                         AtlasLootTooltip:AddLine(ATLASLOOT_DROP_RATE..this.droprate, 1, 1, 0);
                     end
                     if( DKP ~= nil and DKP ~= "" ) then
-                        AtlasLootTooltip:AddLine(RED..DKP.." "..ATLASLOOT_DKP, 1, 1, 0);
+                        AtlasLootTooltip:AddLine(ABRAXA_COL..DKP.." "..ATLASLOOT_DKP, 1, 1, 0);
                     end
                     if( priority ~= nil and priority ~= "" ) then
                         AtlasLootTooltip:AddLine(GREEN..ATLASLOOT_PRIORITY.." "..priority, 1, 1, 0);

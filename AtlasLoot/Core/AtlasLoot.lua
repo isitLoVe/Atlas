@@ -541,6 +541,10 @@ end
 -- new data stores are added in the future.  If new or different data structures are added in any new categories
 -- such as Exteranl Raid Bosses, then the code below should be changed to make sure it can handle that data also.
 -------------------------------------------------------------------------------------------------------------------
+function ForceQueryItem(itemID)
+AtlasLootTooltip:SetHyperlink("item:"..itemID..":0:0:0");
+end
+
 function AtlasLoot_ShowItemsFrame(dataID, dataSource, boss, pFrame)
 
     local itemName, itemLink, itemQuality, itemLevel, itemType, itemSubType, itemCount, itemEquipLoc, itemTexture, itemColor;
@@ -574,6 +578,7 @@ function AtlasLoot_ShowItemsFrame(dataID, dataSource, boss, pFrame)
     else
         for i = 1, 30, 1 do
             if(dataSource[dataID][i] ~= nil and dataSource[dataID][i][3] ~= "") then
+				pcall(ForceQueryItem, dataSource[dataID][i][1]);
                 itemName, itemLink, itemQuality, itemLevel, itemType, itemSubType, itemCount, itemEquipLoc, itemTexture = GetItemInfo(dataSource[dataID][i][1]);
                 if(GetItemInfo(dataSource[dataID][i][1])) then
                     _, _, _, itemColor = GetItemQualityColor(itemQuality);
