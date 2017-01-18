@@ -1,4 +1,11 @@
 # Atlas
+Varua Edition:
+Using a version of Atlas compatible with this version of AtlasLoot the instances were now split into Kalimdor and Eastern Kingdoms and I generally was always fed up of scanning through the list of instances for only the Raids.
+
+So I added another list with 20 and 40 man raids called "Raids" sorted by progression level.
+
+
+
 Is your loot assignment always taking too long?
 Everytime an item drops someone asks "How much is this?"
 Are your raid leaders debatting the prices in officer chat?
