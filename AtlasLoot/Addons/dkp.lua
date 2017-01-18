@@ -117,6 +117,37 @@ Item22351 = "148"; --T3 Chest Token
 Item22350 = "148"; --T3 Chest Token
 Item22349 = "148"; --T3 Chest Token
 
+Item23050 = "160"; --Cloak of the Necropolis
+Item23045 = "160"; --Shroud of Dominion 
+Item23043 = "150"; --The Face of Death
+Item23242 = "180"; --Claw of the Frost Wyrm 
+Item23049 = "160"; --Sapphiron's Left Eye 
+Item23048 = "160"; --Sapphiron's Right Eye
+Item23040 = "160"; --Glyph of Deflection
+Item23047 = "160"; --Eye of the Dead
+Item23046 = "160"; --The Restrained Essence of Sapphiron
+Item23041 = "160"; --Slayer's Crest 
+Item23548 = "80"; --Might of the Scourge
+Item23545 = "80"; --Power of the Scourge
+Item23547 = "80"; --Resilience of the Scourge
+Item23549 = "120"; --Fortitude of the Scourge
+
+Item22802 = "200"; --Kingsfall
+Item23054 = "200"; --Gressil, Dawn of Ruin
+Item23577 = "200"; --The Hungering Cold 
+Item23056 = "240"; --Hammer of the Twisting Nether
+Item22798 = "300"; --Might of Menethil
+Item22799 = "300"; --Soulseeker 
+Item22821 = "116"; --Doomfinger 
+Item22812 = "300"; --Nerubian Slavemaker
+Item22819 = "180"; --Shield of Condemnation 
+Item23057 = "140"; --Gem of Trapped Innocents 
+Item23053 = "140"; --Stormrage's Talisman of Seething 
+Item22520 = "0"; --The Phylactery of Kel'Thuzad 
+Item22733 = "400"; --Staff Head of Atiesh
+
+
+--[[
 Item22490 = "120"; --Dreamwalker Raiment
 Item22491 = "100"; --Dreamwalker Raiment
 Item22488 = "148"; --Dreamwalker Raiment
@@ -125,7 +156,7 @@ Item22493 = "96"; --Dreamwalker Raiment
 Item22494 = "92"; --Dreamwalker Raiment
 Item22489 = "136"; --Dreamwalker Raiment
 Item22492 = "92"; --Dreamwalker Raiment
-Item23064 = "1337"; --Dreamwalker Raiment
+Item23064 = "160"; --Dreamwalker Raiment
 
 Item22438 = "120"; --Cryptstalker Armor
 Item22439 = "100"; --Cryptstalker Armor
@@ -135,7 +166,7 @@ Item22441 = "96"; --Cryptstalker Armor
 Item22442 = "92"; --Cryptstalker Armor
 Item22437 = "136"; --Cryptstalker Armor
 Item22440 = "92"; --Cryptstalker Armor
-Item23067 = "1337"; --Cryptstalker Armor
+Item23067 = "160"; --Cryptstalker Armor
 
 Item22498 = "120"; --Frostfire Regalia
 Item22499 = "100"; --Frostfire Regalia
@@ -145,7 +176,7 @@ Item22501 = "96"; --Frostfire Regalia
 Item22502 = "92"; --Frostfire Regalia
 Item22497 = "136"; --Frostfire Regalia
 Item22500 = "92"; --Frostfire Regalia
-Item23062 = "1337"; --Frostfire Regalia
+Item23062 = "160"; --Frostfire Regalia
 
 Item22514 = "120"; --Vestments of Faith
 Item22515 = "100"; --Vestments of Faith
@@ -155,7 +186,7 @@ Item22517 = "96"; --Vestments of Faith
 Item22518 = "92"; --Vestments of Faith
 Item22513 = "136"; --Vestments of Faith
 Item22516 = "92"; --Vestments of Faith
-Item23061 = "1337"; --Vestments of Faith
+Item23061 = "160"; --Vestments of Faith
 
 Item22478 = "120"; --Bonescythe Armor
 Item22479 = "100"; --Bonescythe Armor
@@ -165,7 +196,7 @@ Item22481 = "96"; --Bonescythe Armor
 Item22482 = "92"; --Bonescythe Armor
 Item22477 = "136"; --Bonescythe Armor
 Item22480 = "92"; --Bonescythe Armor
-Item23060 = "1337"; --Bonescythe Armor
+Item23060 = "160"; --Bonescythe Armor
 
 Item22466 = "120"; --The Earthshatterer
 Item22467 = "100"; --The Earthshatterer
@@ -175,7 +206,7 @@ Item22469 = "96"; --The Earthshatterer
 Item22470 = "92"; --The Earthshatterer
 Item22465 = "136"; --The Earthshatterer
 Item22468 = "92"; --The Earthshatterer
-Item23065 = "1337"; --The Earthshatterer
+Item23065 = "160"; --The Earthshatterer
 
 Item22506 = "120"; --Plaguehart Raiment
 Item22507 = "100"; --Plaguehart Raiment
@@ -185,7 +216,7 @@ Item22509 = "96"; --Plaguehart Raiment
 Item22510 = "92"; --Plaguehart Raiment
 Item22505 = "136"; --Plaguehart Raiment
 Item22508 = "92"; --Plaguehart Raiment
-Item23063 = "1337"; --Plaguehart Raiment
+Item23063 = "160"; --Plaguehart Raiment
 
 Item22418 = "120"; --Dreadnaught's Battlegear
 Item22419 = "100"; --Dreadnaught's Battlegear
@@ -195,8 +226,8 @@ Item22421 = "96"; --Dreadnaught's Battlegear
 Item22422 = "92"; --Dreadnaught's Battlegear
 Item22417 = "136"; --Dreadnaught's Battlegear
 Item22420 = "92"; --Dreadnaught's Battlegear
-Item23059 = "1337"; --Dreadnaught's Battlegear
-
+Item23059 = "160"; --Dreadnaught's Battlegear
+]]
 	---------------------------
 	--- Temple of Ahn'Qiraj ---
 	---------------------------
