@@ -4665,7 +4665,7 @@ AtlasLootItems = {
         };
 
     NAXKelThuzard = {
-        { 0, "?", "=q4=Fists of the Unrelenting", "=ds=#s9#, #a4#" },
+        --{ 0, "?", "=q4=Fists of the Unrelenting", "=ds=#s9#, #a4#" },
         { 22802, "INV_Weapon_Shortblade_37", "=q4=Kingsfall", "=ds=#w4#" },
         { 23054, "INV_Sword_61", "=q4=Gressil, Dawn of Ruin", "=ds=#h1# #w10#" },
         { 23577, "INV_Sword_62", "=q4=The Hungering Cold", "=ds=#h1# #w10#" }, 
@@ -4680,6 +4680,7 @@ AtlasLootItems = {
         { 22520, "INV_Misc_Urn_01", "=q4=The Phylactery of Kel'Thuzad", "=ds=#m2#", "100%" },
         { 23207, "INV_Misc_Token_ArgentDawn3", "=q4=Mark of the Champion", "=ds=#s14#, #m4#" },
         { 23206, "INV_Misc_Token_ArgentDawn2", "=q4=Mark of the Champion", "=ds=#s14#, #m4#" },
+        { 0, "", "", "" },
         { 23064, "INV_Jewelry_Ring_51Naxxramas", "=q4=Ring of the Dreamwalker", "=ds=#s13# =q1=#m1# =ds=#c1#" },
         { 23067, "INV_Jewelry_Ring_51Naxxramas", "=q4=Ring of the Cryptstalker", "=ds=#s13# =q1=#m1# =ds=#c2#" },
         { 23062, "INV_Jewelry_Ring_51Naxxramas", "=q4=Frostfire Ring", "=ds=#s13# =q1=#m1# =ds=#c3#" },
