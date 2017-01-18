@@ -36,6 +36,7 @@ ATLAS_DROPDOWN_LIST_BG = {};
 ATLAS_DROPDOWN_LIST_FP = {};
 ATLAS_DROPDOWN_LIST_DL = {};
 ATLAS_DROPDOWN_LIST_RE = {};
+ATLAS_DROPDOWN_LIST_RD = {};
 
 local DefaultAtlasOptions = {
 	["AtlasVersion"] = ATLAS_VERSION;
@@ -156,6 +157,12 @@ local function Atlas_SortZonesAlphaRE(a, b)
 	return aa < bb;
 end
 
+local function Atlas_SortZonesAlphaRD(a, b)
+	local aa = Atlas_SanitizeName(AtlasRD[a].ZoneName);
+	local bb = Atlas_SanitizeName(AtlasRD[b].ZoneName);
+	return aa < bb;
+end
+
 --These are the REAL level range values!
 --Overrides the values that may be found in the localization files
 function Atlas_UpdateLevelRanges()
@@ -206,6 +213,14 @@ function Atlas_UpdateLevelRanges()
 	AtlasRE.Azuregos.LevelRange =					"60+";
 	AtlasRE.FourDragons.LevelRange =				"60+";
 	AtlasRE.Kazzak.LevelRange =						"60+";
+
+	AtlasRD.ZulGurub.LevelRange =					"60+";
+	AtlasRD.TheRuinsofAhnQiraj.LevelRange =			"60+";
+	AtlasRD.MoltenCore.LevelRange =					"60+";
+	AtlasRD.OnyxiasLair.LevelRange =				"60+";
+	AtlasRD.BlackwingLair.LevelRange =				"60+";
+	AtlasRD.TheTempleofAhnQiraj.LevelRange =		"60+";
+	AtlasRD.Naxxramas.LevelRange =					"60+";
 end
 
 --These are the REAL player limit values!
@@ -258,6 +273,14 @@ function Atlas_UpdatePlayerLimits()
 	AtlasRE.Azuregos.PlayerLimit =					"40";
 	AtlasRE.FourDragons.PlayerLimit =				"40";
 	AtlasRE.Kazzak.PlayerLimit =					"40";
+
+	AtlasRD.ZulGurub.PlayerLimit =					"20";
+	AtlasRD.TheRuinsofAhnQiraj.PlayerLimit =		"20";
+	AtlasRD.MoltenCore.PlayerLimit =				"40";
+	AtlasRD.OnyxiasLair.PlayerLimit =				"40";
+	AtlasRD.BlackwingLair.PlayerLimit =				"40";
+	AtlasRD.TheTempleofAhnQiraj.PlayerLimit =		"40";
+	AtlasRD.Naxxramas.PlayerLimit =					"40";
 end
 
 --Main Atlas event handler
@@ -292,6 +315,7 @@ function Atlas_Init()
     for k,v in pairs(AtlasFP) do table.insert(ATLAS_DROPDOWN_LIST_FP, k); end
     for k,v in pairs(AtlasDL) do table.insert(ATLAS_DROPDOWN_LIST_DL, k); end
     for k,v in pairs(AtlasRE) do table.insert(ATLAS_DROPDOWN_LIST_RE, k); end
+    for k,v in pairs(AtlasRD) do table.insert(ATLAS_DROPDOWN_LIST_RD, k); end
 
 	--Update the level ranges and player limits
 	--Overrides the values in the localization files because I'm too lazy to change them all
@@ -306,7 +330,18 @@ function Atlas_Init()
 	table.sort(ATLAS_DROPDOWN_LIST_FP, Atlas_SortZonesAlphaFP);
 	table.sort(ATLAS_DROPDOWN_LIST_DL, Atlas_SortZonesAlphaDL);
 	table.sort(ATLAS_DROPDOWN_LIST_RE, Atlas_SortZonesAlphaRE);
+	--table.sort(ATLAS_DROPDOWN_LIST_RD, Atlas_SortZonesAlphaRD);
 	
+	ATLAS_DROPDOWN_LIST_RD[1] = "ZulGurub";
+	ATLAS_DROPDOWN_LIST_RD[2] = "TheRuinsofAhnQiraj";
+	ATLAS_DROPDOWN_LIST_RD[3] = "MoltenCore";
+	ATLAS_DROPDOWN_LIST_RD[4] = "OnyxiasLair";
+	ATLAS_DROPDOWN_LIST_RD[5] = "BlackwingLair";
+	ATLAS_DROPDOWN_LIST_RD[6] = "TheTempleofAhnQiraj";
+	ATLAS_DROPDOWN_LIST_RD[7] = "Naxxramas";
+
+
+
 	--Now that saved variables have been loaded, update everything accordingly
 	Atlas_Refresh();
 	AtlasOptions_Init();
@@ -442,6 +477,9 @@ function Atlas_Refresh()
 	elseif ( AtlasOptions.AtlasType == 6 ) then
 		zoneID = ATLAS_DROPDOWN_LIST_RE[AtlasOptions.AtlasZone];
 		textSource = AtlasRE;
+	elseif ( AtlasOptions.AtlasType == 7 ) then
+		zoneID = ATLAS_DROPDOWN_LIST_RD[AtlasOptions.AtlasZone];
+		textSource = AtlasRD;
 	end
 	AtlasMap:ClearAllPoints();
 	AtlasMap:SetWidth(512);
@@ -508,6 +546,8 @@ function AtlasFrameDropDown_Initialize()
 		AtlasFrameDropDown_Populate(AtlasDL, ATLAS_DROPDOWN_LIST_DL);
 	elseif ( AtlasOptions.AtlasType == 6 ) then
 		AtlasFrameDropDown_Populate(AtlasRE, ATLAS_DROPDOWN_LIST_RE);
+	elseif ( AtlasOptions.AtlasType == 7 ) then
+		AtlasFrameDropDown_Populate(AtlasRD, ATLAS_DROPDOWN_LIST_RD);
 	end
 end
 
@@ -518,6 +558,7 @@ function AtlasFrameDropDown_Populate(mapType, dropList)
 	local info;
 	for i = 1, getn(dropList), 1 do
 		info = {
+			jklh = mapType[dropList[i]];
 			text = mapType[dropList[i]]["ZoneName"];
 			func = AtlasFrameDropDown_OnClick;
 		};
@@ -567,6 +608,9 @@ function Atlas_AutoSelect()
 	elseif currentType == 2 then
 		currentDB = AtlasKalimdor;
 		currentDD = ATLAS_DROPDOWN_LIST_KA;
+	elseif currentType == 7 then
+		currentDB = AtlasRD
+		currentDD = ATLAS_DROPDOWN_LIST_RD;
 	else
 		return;
 	end
@@ -589,6 +633,16 @@ function Atlas_AutoSelect()
 			local mapName = AtlasKalimdor[ATLAS_DROPDOWN_LIST_KA[i]]["ZoneName"];
 			if(currentZone == mapName) then
 				AtlasOptions.AtlasType = 2;
+				AtlasOptions.AtlasZone = i;
+				UIDropDownMenu_SetSelectedID(AtlasFrameDropDown, i);
+				Atlas_Refresh();
+				return;
+			end
+		end
+		for i = 1, getn(ATLAS_DROPDOWN_LIST_RD), 1 do
+			local mapName = AtlasRD[ATLAS_DROPDOWN_LIST_RD[i]]["ZoneName"];
+			if(currentZone == mapName) then
+				AtlasOptions.AtlasType = 7;
 				AtlasOptions.AtlasZone = i;
 				UIDropDownMenu_SetSelectedID(AtlasFrameDropDown, i);
 				Atlas_Refresh();
@@ -618,6 +672,12 @@ function Atlas_ReplaceWorldMap()
 		end
 		for i = 1, getn(ATLAS_DROPDOWN_LIST_KA), 1 do
 			local mapName = AtlasKalimdor[ATLAS_DROPDOWN_LIST_KA[i]]["ZoneName"];
+			if(currentZone == mapName) then
+				return true;
+			end
+		end
+		for i = 1, getn(ATLAS_DROPDOWN_LIST_RD), 1 do
+			local mapName = AtlasRD[ATLAS_DROPDOWN_LIST_RD[i]]["ZoneName"];
 			if(currentZone == mapName) then
 				return true;
 			end

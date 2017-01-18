@@ -321,12 +321,14 @@ function AtlasLoot_Refresh()
             end
         else
             --If we are dealing with instances
-            if ( AtlasOptions.AtlasType == 1 or AtlasOptions.AtlasType == 2) then
+            if ( AtlasOptions.AtlasType == 1 or AtlasOptions.AtlasType == 2 or AtlasOptions.AtlasType == 7) then
                 local zoneID;
                 if AtlasOptions.AtlasType == 1 then
                     zoneID = ATLAS_DROPDOWN_LIST_EK[AtlasOptions.AtlasZone];
                 elseif AtlasOptions.AtlasType == 2 then
                     zoneID = ATLAS_DROPDOWN_LIST_KA[AtlasOptions.AtlasZone];
+                elseif AtlasOptions.AtlasType == 7 then
+                    zoneID = ATLAS_DROPDOWN_LIST_RD[AtlasOptions.AtlasZone];
                 end
                 local text;
                 --If we have atlasloot data
@@ -500,12 +502,14 @@ function AtlasLootBoss_OnClick(id)
 
         local _,_,boss = string.find(getglobal("AtlasBossLine_"..id.."_Text"):GetText(), "|c%x%x%x%x%x%x%x%x%s*[%dX]*[%) ]*(.*[^%,])[%,]?$");
 
-        if ( AtlasOptions.AtlasType == 1 or AtlasOptions.AtlasType == 2 ) then
+        if ( AtlasOptions.AtlasType == 1 or AtlasOptions.AtlasType == 2 or AtlasOptions.AtlasType == 7) then
             local zoneID;
             if AtlasOptions.AtlasType == 1 then
                 zoneID = ATLAS_DROPDOWN_LIST_EK[AtlasOptions.AtlasZone];
             elseif AtlasOptions.AtlasType == 2 then
                 zoneID = ATLAS_DROPDOWN_LIST_KA[AtlasOptions.AtlasZone];
+            elseif AtlasOptions.AtlasType == 7 then
+                zoneID = ATLAS_DROPDOWN_LIST_RD[AtlasOptions.AtlasZone];
             end
             local dataID = AtlasLootBossButtons[zoneID][id];
             AtlasLoot_ShowItemsFrame(dataID, AtlasLootItems, "|cffFFd200Boss: |cffFFFFFF"..boss);
@@ -529,6 +533,12 @@ function AtlasLootBoss_OnClick(id)
     end
 end
 
+
+function ForceQueryItem(itemID)
+    AtlasLootTooltip:SetHyperlink("item:"..itemID..":0:0:0");
+end
+
+
 -------------------------------------------------------------------------------------------------------------------
 -- Code below placed in own function to allow calls from external sources as well as from AtlasLootBoss_OnClick(id)
 -- The function now accepts :
@@ -541,10 +551,6 @@ end
 -- new data stores are added in the future.  If new or different data structures are added in any new categories
 -- such as Exteranl Raid Bosses, then the code below should be changed to make sure it can handle that data also.
 -------------------------------------------------------------------------------------------------------------------
-function ForceQueryItem(itemID)
-AtlasLootTooltip:SetHyperlink("item:"..itemID..":0:0:0");
-end
-
 function AtlasLoot_ShowItemsFrame(dataID, dataSource, boss, pFrame)
 
     local itemName, itemLink, itemQuality, itemLevel, itemType, itemSubType, itemCount, itemEquipLoc, itemTexture, itemColor;
@@ -578,7 +584,8 @@ function AtlasLoot_ShowItemsFrame(dataID, dataSource, boss, pFrame)
     else
         for i = 1, 30, 1 do
             if(dataSource[dataID][i] ~= nil and dataSource[dataID][i][3] ~= "") then
-				pcall(ForceQueryItem, dataSource[dataID][i][1]);
+                pcall(ForceQueryItem, dataSource[dataID][i][1]);
+                
                 itemName, itemLink, itemQuality, itemLevel, itemType, itemSubType, itemCount, itemEquipLoc, itemTexture = GetItemInfo(dataSource[dataID][i][1]);
                 if(GetItemInfo(dataSource[dataID][i][1])) then
                     _, _, _, itemColor = GetItemQualityColor(itemQuality);
@@ -606,7 +613,7 @@ function AtlasLoot_ShowItemsFrame(dataID, dataSource, boss, pFrame)
                 extra = dataSource[dataID][i][4];
                 extra = AtlasLoot_FixText(extra);
                 if((not GetItemInfo(dataSource[dataID][i][1])) and (dataSource[dataID][i][1] ~= 0)) then
-                    extra = extra..ATLASLOOT_NO_ITEMINFO;
+                    --extra = extra..ATLASLOOT_NO_ITEMINFO;
                 end
         
                 iconFrame  = getglobal("AtlasLootItem_"..i.."_Icon");
