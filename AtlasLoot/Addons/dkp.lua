@@ -130,7 +130,7 @@ Item23041 = "160"; --Slayer's Crest
 Item23548 = "80"; --Might of the Scourge
 Item23545 = "80"; --Power of the Scourge
 Item23547 = "80"; --Resilience of the Scourge
-Item23549 = "120"; --Fortitude of the Scourge
+Item23549 = "100"; --Fortitude of the Scourge
 
 Item22802 = "200"; --Kingsfall
 Item23054 = "200"; --Gressil, Dawn of Ruin
