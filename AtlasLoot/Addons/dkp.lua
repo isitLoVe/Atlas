@@ -147,7 +147,7 @@ Item22520 = "0"; --The Phylactery of Kel'Thuzad
 Item22733 = "400"; --Staff Head of Atiesh
 
 
---[[
+
 Item22490 = "120"; --Dreamwalker Raiment
 Item22491 = "100"; --Dreamwalker Raiment
 Item22488 = "148"; --Dreamwalker Raiment
@@ -227,7 +227,7 @@ Item22422 = "92"; --Dreadnaught's Battlegear
 Item22417 = "136"; --Dreadnaught's Battlegear
 Item22420 = "92"; --Dreadnaught's Battlegear
 Item23059 = "160"; --Dreadnaught's Battlegear
-]]
+
 	---------------------------
 	--- Temple of Ahn'Qiraj ---
 	---------------------------
